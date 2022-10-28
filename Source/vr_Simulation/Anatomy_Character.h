@@ -52,6 +52,10 @@ public:
 		void ViewIndividual();
 	UFUNCTION(BlueprintCallable)
 		void ResetCamera();
+	UFUNCTION(BlueprintCallable)
+		FString ReadFromFile(const FString& Path);
+	UFUNCTION(BlueprintCallable)
+		FString FilterString(const FString& ComponentName);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

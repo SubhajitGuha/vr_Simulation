@@ -8,6 +8,11 @@
 #include "GameFramework/PlayerController.h"
 #include "Camera/CameraComponent.h"
 #include "RHIDefinitions.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <algorithm>
+
 // Sets default values
 AAnatomy_Character::AAnatomy_Character()
 {
@@ -153,6 +158,50 @@ void AAnatomy_Character::ResetCamera()
 	if (Spring == NULL)
 		return;
 	Spring->SetRelativeLocation(SpringArmIniLoc);
+}
+
+FString AAnatomy_Character::ReadFromFile(const FString& Path)
+{
+	std::string destination = std::string(TCHAR_TO_UTF8(*Path));//convert to std string;
+	std::ifstream stream(destination);
+	if (&stream == nullptr)
+		UE_LOG(LogTemp, Error, TEXT("File not found"));
+	std::string data;//tostore each line
+	std::string information="";//to store the entire file data;
+	while(std::getline(stream,data))
+	{
+		information.append(data + "\n");
+	}
+	return UTF8_TO_TCHAR(information.c_str());
+}
+
+FString AAnatomy_Character::FilterString(const FString& ComponentName)
+{
+	std::string str = TCHAR_TO_UTF8(*ComponentName);
+	
+	std::string SSub = "";
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (str[i]=='_')
+		{
+			SSub = str.substr(i);
+			break;
+		}
+	
+	}
+	for (int i = 0; i < SSub.size(); i++) {
+		if (SSub[i] == '_' || (SSub[i]>='0' && SSub[i]<='9'))
+			SSub[i] = ' ';
+	}
+
+	//std::replace_if(SSub.begin(), SSub.end(), [](char c) {
+	//	return (c == '_' || c == 'l' || c == 'r'); }, ' ');
+
+	int last = SSub.size() - 1;
+	while (last >= 0 && (SSub[last] == ' ' || SSub[last]=='l' || SSub[last] == 'r'))
+		last--;
+	SSub = SSub.substr(0, last + 1);
+	return UTF8_TO_TCHAR(SSub.c_str());
 }
 
 void AAnatomy_Character::ResetMaterial()

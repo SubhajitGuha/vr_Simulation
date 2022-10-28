@@ -1,0 +1,31 @@
+This file is a mixed and modified version of several open source files. 
+Most of it comes from two different files made by "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan"
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+
+
+With regard to this database, you are licensed to:
+
+    freely access part or whole of this database, and acquire data;
+    freely redistribute part or whole of the data from this database; and
+    freely create and distribute database and other derivative works based on part or whole of the data from this database,
+
+under the license, as long as you comply with the following conditions:
+
+    You must attribute this database in the manner specified by the author or licensor when distributing part or whole of this database or any derivative work.
+    You must distribute any derivative work based on part or whole of the data from this database under the license.
+    You need to contact the Licensor shown below to request a license for use of this database or any part thereof not licensed under the license.
+
+The contribution of 'Z-anatomy' has been to
+-repair the meshes (they should all be 'watertight')
+-reduce the weight of the files (cleaning; cloning symmetrical structures)
+-rename and organize the anatomical structures according to the 'Terminologia Anatomica-2d edition(2019)'
+-integrate the structures of the 1st model into the second, when they were missing 
+-Add materials
+-Add the muscular insertions (of the appendicular skeleton,so far)
+-Create a shortcut that gives access to collection through a double Left-clic
+---
+
+If you use, share, sell, mix, fix or modify these files; 
+please be sure attribute these files as follows:
+"BodyParts3D, © The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan"
+mixed and modified by 'Z-anatomy.com'

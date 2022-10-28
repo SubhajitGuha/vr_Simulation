@@ -1,0 +1,29 @@
+import bpy
+
+from bpy.app import driver_namespace as dns
+
+def test(self, dg):
+    vl = dg.view_layer
+    return not self.parent.original.visible_get(view_layer=vl)
+ 
+dns["test"] = test
+   
+context = bpy.context
+scene = context.scene
+#parented objects
+parented = [o for o in scene.objects if o.parent]
+
+for o in parented:
+    #o.animation_data_clear() # testing
+    #continue
+    o.animation_data_create()
+    fcurve = o.driver_add("hide_viewport")
+    driver = fcurve.driver
+    driver.expression = "test(self, depsgraph)"
+    driver.use_self = True
+    # dummy var to make driver update.
+    var = driver.variables.new()
+    var.name = "dummy" # frame
+    var.targets[0].id_type = 'SCENE'
+    var.targets[0].id = scene
+    var.targets[0].data_path = "frame_current"

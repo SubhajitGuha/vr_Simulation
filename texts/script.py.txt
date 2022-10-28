@@ -1,0 +1,50 @@
+import bpy
+import datetime
+
+file_destination = "/tmp"
+
+# GET SCRIPTS
+all_scripts = bpy.data.texts
+num_of_scripts = int((str(all_scripts).split('[')[1]).split(']')[0])
+
+
+# GET BLENDER FILE NAME
+path = str(bpy.data.filepath).split('\\')
+file_path_num = len(path) - 1
+file_name = path[file_path_num].split('.blend')[0]
+
+i=0
+for x in range(0,num_of_scripts):
+    txt_script = bpy.data.texts[i]
+
+    # DELETE A .py
+    script_name = (str(txt_script).split("\"")[1]).split('.py')[0]
+    if 'Text' not in script_name:
+
+        py_filename = script_name+'.txt'
+
+        # SAVE SCRIPT
+        bpy.ops.text.save_as(filepath=str(file_destination)+'\\'+str(py_filename),
+        hide_props_region=True,
+        check_existing=True,
+        filter_blender=False,
+        filter_backup=False,
+        filter_image=False,
+        filter_movie=False,
+        filter_python=False,
+        filter_font=False,
+        filter_sound=False,
+        filter_text=True,
+        filter_archive=False,
+        filter_btx=False,
+        filter_collada=False,
+        filter_alembic=False,
+        filter_usd=False,
+        filter_folder=True,
+        filter_blenlib=False,
+        #filemode=9,
+        display_type='LIST_LONG ',
+        sort_method='FILE_SORT_ALPHA')
+
+    i+=1
+

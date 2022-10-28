@@ -1,0 +1,16 @@
+import bpy
+from pathlib import Path
+
+destination_folder = "G:/texts"
+df = Path(destination_folder)
+
+#create if doesn't exist
+if not df.exists():
+    df.mkdir(parents=True, exist_ok=True)
+
+for text in bpy.data.texts:
+    p = df / (text.name+".txt")
+    if (text.name).find("*") != -1:
+        p = df / ((text.name).replace("*","")+".txt")
+    p.write_text(text.as_string())
+    print(p)

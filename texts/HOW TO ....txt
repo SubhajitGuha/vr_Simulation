@@ -1,0 +1,165 @@
+
+
+                    NAVIGATION
+
+
+Press the Middle mouse button(MMB) and drag the mouse
+    to orbit in the 3D view
+
+Press'Shift+MMB' and drag the mouse
+    to pan the view
+
+Press 'Numpad 1': Frontal view
+      'Numpad 3': Left view
+      'Numpad 7': Cranial view
+      'Numpad 9': Invert point of view
+      'Numpad 5': Toggle Orthographic/Perspective view
+
+Press 'Ctrl+Numpad 1/3/7' 
+    to get the opposite view (Dorsal/Right/Caudal)
+    
+Press 'Ctrl+Spacebar' 
+    to maximise (in/out) a window
+    
+Press 'Numpad .'
+    to center the view on selection
+
+Press 'HOME'
+    to frame all the visible objects   
+
+
+
+                    COLORS
+    
+    
+Press 'Z' 
+    to switch between 'Solid' and 'Rendered' viewport shading
+    
+In 'Solid' viewport shading, 
+Press 'Alt+Z' 
+    to toggle X-ray mode.
+Press 'Alt+B' 
+    to create or get out of a Clipping border
+
+
+
+                    LAYERS/SYSTEMS
+
+    
+Press '1','2','3',...To change layer/collection
+    'Shift+1+2+...' To add/remove a layer/collection
+
+
+
+
+                    SELECTION
+
+
+Press 'A' 
+    to select all the visible objects
+    
+Press 'A;A' or 'Alt+A' 
+    to deselect all
+
+Press Left Mouse Button (LMB) 
+    to select an object
+    
+Press 'Shift+LMB' 
+    to Select several objects
+    
+Clic and drag 'LMB' 
+    to select several objects with box-select
+    
+Press 'C'
+    to enter/exit the brush selection mode
+    Scroll the Mousewheel to adjust the brush size
+    
+
+Press 'RMB' 
+    to Select one of the collections of the active object
+
+Press 'LMB' twice (fast) 
+    to extend the selection to the object's children
+    
+Press 'Down arrow'
+    to select all the children of the selected object
+    
+Press 'Up arrow'
+    to select the parent of the active object
+
+
+
+                    DISPLAY
+                    
+                    
+Press 'H' 
+    to hide the selected objects
+    
+Press 'SHIFT+H'
+    to isolate the selected objects
+    
+Press 'Alt+H'
+    to show everything inside the active layer(s)
+    
+
+                    LABELS and STORED VIEWS
+
+
+-With the Mouse cursor above the 3D View-
+Press 'N' 
+    to open/close the Menu
+    
+In 'Stored Views', press 'Initialize';
+    the cube-icons now activates the Stored Views
+
+In 'MeasuIt Tools', press 'Show';
+    the labels of the selected bones now appear
+
+    
+    
+                    MANIPULATION
+    
+    
+Press 'G' 
+    to Grab (move with the mouse) the selected object(s)
+
+Press 'Alt+G' 
+    to Reset the position of the selected object(s)
+    
+Press 'R' 
+    to Rotate (with the mouse) the selected object(s)
+    
+Press 'Alt+R' 
+    to Reset the rotation of the selected object(s)
+    
+Press 'T' 
+    to open/close the Toolbar
+    
+    
+    
+                    OUTLINER
+                    
+                    
+Press '+' or '-'
+    to develop or collapse all
+    
+Press the arrows 
+    to navigate and develop/collapse each line
+    
+Press the eye icon
+    to show/hide the underlying visible collection
+    
+Press 'Shift + the eye icon'
+    to show/hide all the objects inside a collection
+    
+    
+    
+
+More information about the options on
+    https://www.z-anatomy.com/how-to
+in the Blender manual, on youtube, on the forums
+
+or use the forum of the website to ask your question:
+    https://www.z-anatomy.com/forum/about-blender
+or if there are modifications to do on the anatomical content:
+    https://www.z-anatomy.com/forum/about-anatomy

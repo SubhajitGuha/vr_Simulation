@@ -1,0 +1,14 @@
+
+
+STORED VIEWS
+
+
+-With the Mouse cursor above the 3D View-
+Press 'N' 
+    to open/close the Menu
+    
+In 'Stored Views', press 'Initialize';
+    the cube-icons now activates the Stored Views
+
+In 'MeasuIt Tools', press 'Show';
+    the labels of the selected bones now appear
