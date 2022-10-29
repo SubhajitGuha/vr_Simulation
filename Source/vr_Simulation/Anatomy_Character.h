@@ -7,6 +7,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "Anatomy_Character.generated.h"
 
 UCLASS()
@@ -56,6 +57,7 @@ public:
 		FString ReadFromFile(const FString& Path);
 	UFUNCTION(BlueprintCallable)
 		FString FilterString(const FString& ComponentName);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

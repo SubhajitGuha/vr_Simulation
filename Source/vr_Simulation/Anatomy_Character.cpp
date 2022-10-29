@@ -182,25 +182,37 @@ FString AAnatomy_Character::FilterString(const FString& ComponentName)
 	std::string SSub = "";
 	for (int i = 0; i < str.size(); i++)
 	{
-		if (str[i]=='_')
+		if (str[i]=='_' && i+1 < str.size())
 		{
-			SSub = str.substr(i);
+			SSub = str.substr(i+1);
 			break;
 		}
 	
 	}
+
+	if (SSub[SSub.size() - 1] == 'l' || SSub[SSub.size() - 1] == 'r')//Situation specific  (^_^)
+		SSub[SSub.size() - 1] = ' ';
+	if (SSub[0] >= '0' && SSub[0] <= '9')//for Muscular System _01 and  01, Dont want to import all those again
+		SSub[0] = ' ';
+	if (SSub[1] >= '0' && SSub[1] <= '9')
+		SSub[1] = ' ';
+
 	for (int i = 0; i < SSub.size(); i++) {
-		if (SSub[i] == '_' || (SSub[i]>='0' && SSub[i]<='9'))
+		if (SSub[i] == '_')
 			SSub[i] = ' ';
 	}
 
-	//std::replace_if(SSub.begin(), SSub.end(), [](char c) {
-	//	return (c == '_' || c == 'l' || c == 'r'); }, ' ');
-
 	int last = SSub.size() - 1;
-	while (last >= 0 && (SSub[last] == ' ' || SSub[last]=='l' || SSub[last] == 'r'))
+	while (last >= 0 && SSub[last] == ' ')
 		last--;
 	SSub = SSub.substr(0, last + 1);
+
+	int first = 0;
+	while (first < SSub.length() && SSub[first] == ' ') {
+		first++;
+	}
+	SSub = SSub.substr(first);
+
 	return UTF8_TO_TCHAR(SSub.c_str());
 }
 
