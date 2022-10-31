@@ -102,6 +102,7 @@ void AAnatomy_Character::MoveCameraLeft(float val)
 
 void AAnatomy_Character::RayCast()
 {
+	ResetMaterial();
 	AController* control = GetController();
 	if (!control && !Camera)
 		return;
@@ -190,8 +191,10 @@ FString AAnatomy_Character::FilterString(const FString& ComponentName)
 	
 	}
 
-	if (SSub[SSub.size() - 1] == 'l' || SSub[SSub.size() - 1] == 'r')//Situation specific  (^_^)
-		SSub[SSub.size() - 1] = ' ';
+	//SSub = SSub + '_';
+
+	if ((SSub[SSub.size() - 1] == 'l' || SSub[SSub.size() - 1] == 'r') && SSub[SSub.size() - 2] == '_')//Situation specific  (^_^)
+		SSub[SSub.size() - 1] = ' ';//SSub[SSub.size() - 2] == '_' this cond is required for the case of name like (Liver) where the last letter is r
 	if (SSub[0] >= '0' && SSub[0] <= '9')//for Muscular System _01 and  01, Dont want to import all those again
 		SSub[0] = ' ';
 	if (SSub[1] >= '0' && SSub[1] <= '9')
@@ -218,6 +221,8 @@ FString AAnatomy_Character::FilterString(const FString& ComponentName)
 
 void AAnatomy_Character::ResetMaterial()
 {
+	if (!StaticMesh)
+		return;
 	int i = 0;
 	for (UMaterialInterface* initMat : InitialMaterial) {//reset all the materials to their init Material
 		if(initMat!=NULL)
